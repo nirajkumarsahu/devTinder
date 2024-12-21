@@ -1,0 +1,59 @@
+- Create a repository
+- Initialize the repositary
+- node_modules, package.json, package-lock.json
+- Install express
+- Create a server
+- Listen a port to 7777
+- Write request handlers for /test, /hello
+- Install nodemon for update script inside package.json
+- What are dependencies
+- What is the use of "-g" while npm install
+- Difference between caret an tilde (^ vs ~)
+
+- Initialize git
+- .gitignore
+- Create a remote repo on github
+- Push all code to remote origin
+- Play with routes and route extension example /hello, / , /hello2, /xyz
+- Order of route matter a lot
+- Install postman app and make a workspace
+- Write logic to handle GET, POST, PATCH, DELETE Api calls and test them on postman
+- Explore routing and use of ?, +, (), \* in the routes
+- Use of regex in routes /a/ , /.\*fly$/
+- Reading the query params in the routes
+- Reading the dynamic routes
+
+- Multiple Route handlers - Play with the code
+- next()
+- next function and errors along with res.send()
+- app.use("/route", rH, [rH2, rH3], rH4, rH5);
+- What is the Middleware? Why do we need it?
+- How express JS basically handles requests behind the scenes
+- Difference app.use and app.all
+- Write a dummy auth middleware for admin
+- Write a dummy with middleware for all user routes, except /user/login
+- Error Handling using app.use("/", (err,req,res,next) = {});
+
+- Create a free culster on MongoDB official website (Mongo Atlas)
+- Install mongoose library
+- Connect your application to the Database "Connection-url"/devTinder
+- Call the connectDB function and connect to database before starting application on 7777
+- Create a userSchema & user Model
+- Create Post / signup API to add data to database
+- Push some documents using API calls from postman
+- Error Handling using try, catch
+
+- JS Object vs JSON (differences)
+- Add the express.json middleware to your app
+- Make your signup API dynamic to receive data from the end server
+- User.findOne with duplicate email ids, which object returned
+- API - Get user by email
+- API - Feed API - GET / feed - get all the users from the database
+- API - Get user by ID
+- Create a delete user API
+- Difference between PATCH and PUT
+- API - Update a User
+- Explore the mongoose documentation for Model API https://mongoosejs.com/docs/api/model.html
+- What are option in a Model.findOneAndUpdate method, explore more about it
+- API - Update the user with email ID
+-
