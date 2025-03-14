@@ -18,8 +18,13 @@ authRouter.post("/signup", async (req, res) => {
       emailId,
       password: passwordHash,
     });
-    await user.save();
-    res.send("User created successfully");
+    const savedUser = await user.save();
+    
+    const token = await savedUser.getJWT();
+    res.cookie("token", token, {
+      expires: new Date(Date.now() + 1 * 3600000),
+    });
+    res.send({ message: "User created successfully", data: savedUser });
   } catch (err) {
     res.status(400).send("Error: " + err.message);
   }
@@ -34,16 +39,12 @@ authRouter.post("/login", async (req, res) => {
     }
     const isPasswordValid = await user.validatePassword(password);
     if (isPasswordValid) {
-      // const token = await jwt.sign({ _id: user._id }, "DEV@Tinder$790", {
-      //   expiresIn: "1h",
-      // });
-      // console.log(token);
-
+    
       const token = await user.getJWT();
       res.cookie("token", token, {
         expires: new Date(Date.now() + 1 * 3600000),
       });
-      res.status(400).send("Login Successfully");
+      res.send(user);
     } else {
       throw new Error("Invalid Password");
     }
