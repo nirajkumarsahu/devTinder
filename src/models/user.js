@@ -67,6 +67,18 @@ const userSchema = new mongoose.Schema(
     skills: {
       type: [String],
     },
+    resume: {
+      type: String,
+      validate(value) {
+        if (
+          !value.endsWith(".pdf") &&
+          !value.endsWith(".doc") &&
+          !value.endsWith(".docx")
+        ) {
+          throw new Error("Resume must be a PDF, DOC, or DOCX file");
+        }
+      },
+    },
   },
   {
     timestamps: true,

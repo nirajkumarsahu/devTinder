@@ -3,6 +3,8 @@ const connectDB = require("./config/database");
 const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const fs = require("fs");
+
 require("dotenv").config();
 const http = require("http");
 
@@ -16,6 +18,10 @@ app.use(
 );
 app.use(express.json());
 app.use(cookieParser());
+
+if (!fs.existsSync("./uploads")) {
+  fs.mkdirSync("./uploads");
+}
 
 const authRouter = require("./routes/auth");
 const profileRouter = require("./routes/profile");
