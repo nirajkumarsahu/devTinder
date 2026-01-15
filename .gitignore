@@ -1,3 +1,6 @@
 node_modules
 package-lock.json
 uploads
+.env
+apiList.md
+homeword.md
